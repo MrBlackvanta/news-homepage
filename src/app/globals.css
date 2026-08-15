@@ -11,10 +11,12 @@
 
   --container-page: 74.375rem;
 
+  --breakpoint-wide: 70rem;
+
   --text-hero: 2.5rem;
   --text-hero--line-height: 1;
-  --text-hero-xl: 3.5rem;
-  --text-hero-xl--line-height: 1;
+  --text-hero-wide: 3.5rem;
+  --text-hero-wide--line-height: 1;
   --text-section: 2rem;
   --text-section--line-height: 1;
   --text-section-lg: 2.5rem;
@@ -54,7 +56,7 @@
 }
 
 @utility v-container {
-  @apply mx-auto w-full max-w-page px-4 md:px-10;
+  @apply mx-auto w-full max-w-120 px-4 sm:max-w-210 sm:px-10 lg:max-w-page;
 }
 
 @utility v-link {
@@ -72,7 +74,7 @@
 }
 
 @utility v-btn {
-  @apply inline-block bg-soft-red px-8.25 py-3 text-button font-bold text-off-white uppercase;
+  @apply inline-flex h-12 w-46.25 items-center justify-center bg-soft-red text-button font-bold text-off-white uppercase;
 
   @media (prefers-reduced-motion: no-preference) {
     @apply transition-colors;
