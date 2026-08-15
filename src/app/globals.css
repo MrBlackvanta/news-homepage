@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --color-off-white: #fffdfa;
+  --color-very-dark-blue: #00001a;
+  --color-dark-grayish-blue: #5e607a;
+  --color-grayish-blue: #c5c6ce;
+  --color-grayish-blue-dark: #8e909f;
+  --color-soft-orange: #e9aa52;
+  --color-soft-red: #d3413b;
+
+  --container-page: 74.375rem;
+
+  --text-hero: 2.5rem;
+  --text-hero--line-height: 1;
+  --text-hero-xl: 3.5rem;
+  --text-hero-xl--line-height: 1;
+  --text-section: 2rem;
+  --text-section--line-height: 1;
+  --text-section-lg: 2.5rem;
+  --text-section-lg--line-height: 1;
+  --text-title: 1.25rem;
+  --text-title--line-height: 1.2;
+  --text-subtitle: 1.125rem;
+  --text-subtitle--line-height: 1.3333;
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.7333;
+  --text-button: 0.875rem;
+  --text-button--line-height: 1.7143;
+  --text-button--letter-spacing: 0.3125em;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+}
+
+@layer base {
+  body {
+    @apply bg-off-white text-body text-very-dark-blue;
+  }
+
+  a,
+  button {
+    @apply v-focus-ring;
+  }
+
+  button:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@utility v-focus-ring {
+  @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-soft-red;
+}
+
+@utility v-container {
+  @apply mx-auto w-full max-w-page px-4 md:px-10;
+}
+
+@utility v-link {
+  @media (prefers-reduced-motion: no-preference) {
+    @apply transition-colors;
+  }
+}
+
+@utility v-link-red {
+  @apply v-link hover:text-soft-red;
+}
+
+@utility v-link-orange {
+  @apply v-link hover:text-soft-orange;
+}
+
+@utility v-btn {
+  @apply inline-block bg-soft-red px-8.25 py-3 text-button font-bold text-off-white uppercase;
+
+  @media (prefers-reduced-motion: no-preference) {
+    @apply transition-colors;
+  }
+
+  &:hover {
+    @apply bg-very-dark-blue;
+  }
+}
+
+@utility v-footer-link {
+  @apply underline underline-offset-2;
+
+  @media (prefers-reduced-motion: no-preference) {
+    @apply transition-colors;
+  }
+
+  &:hover {
+    @apply text-soft-red;
+  }
+}
