@@ -97,9 +97,13 @@ loads the mobile crop on desktop. The card thumbnails are plain `<img>` for a di
 static export forces `images.unoptimized`, so `next/image` was contributing a 15KB client chunk on
 top of `width`/`height`/`loading`, which do the same job natively.
 
-**Tailwind's source detection is scoped to `src`.** Left on auto it also scans `README.md`, where
+**The five images ship as WebP, not the JPGs the challenge provides.** At quality 80 they go from
+168.6KB to 94.5KB — 44% — with no visible change, since every asset is 2x and renders at half
+size. The hero alone drops from 88.2KB to 47.3KB, and it is the LCP element.
+
+**Tailwind's source detection excludes markdown.** Left on auto it also scans `README.md`, where
 prose words like "rounded", "border" and "outline" are valid utility names and get emitted as real
-CSS.
+CSS — along with any class name quoted in a fenced block, including ones from a previous project.
 
 **The scroll lock is a class that releases itself at the menu's breakpoint.** Locking
 `document.body` from JavaScript strands the page if the viewport crosses into the desktop layout
