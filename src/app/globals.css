@@ -55,6 +55,10 @@
   @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-soft-red;
 }
 
+@utility v-scroll-lock {
+  @apply overflow-hidden sm:overflow-visible;
+}
+
 @utility v-container {
   @apply mx-auto w-full max-w-120 px-4 sm:max-w-210 sm:px-10 lg:max-w-page;
 }
@@ -74,25 +78,9 @@
 }
 
 @utility v-btn {
-  @apply inline-flex h-12 w-46.25 items-center justify-center bg-soft-red text-button font-bold text-off-white uppercase;
-
-  @media (prefers-reduced-motion: no-preference) {
-    @apply transition-colors;
-  }
-
-  &:hover {
-    @apply bg-very-dark-blue;
-  }
+  @apply v-link inline-flex h-12 w-46.25 items-center justify-center bg-soft-red text-button font-bold text-off-white uppercase hover:bg-very-dark-blue;
 }
 
 @utility v-footer-link {
-  @apply underline underline-offset-2;
-
-  @media (prefers-reduced-motion: no-preference) {
-    @apply transition-colors;
-  }
-
-  &:hover {
-    @apply text-soft-red;
-  }
+  @apply v-link-red underline underline-offset-2;
 }

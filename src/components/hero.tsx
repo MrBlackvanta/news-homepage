@@ -1,5 +1,5 @@
-import heroDesktop from "@/assets/image-web-3-desktop.jpg";
-import heroMobile from "@/assets/image-web-3-mobile.jpg";
+import heroDesktop from "@/assets/image-web-3-desktop.webp";
+import heroMobile from "@/assets/image-web-3-mobile.webp";
 
 export default function Hero() {
   return (

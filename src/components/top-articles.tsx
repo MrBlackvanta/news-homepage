@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { topArticles } from "@/lib/content";
 
 export default function TopArticles() {
@@ -11,8 +10,17 @@ export default function TopArticles() {
       <ul className="grid gap-8 lg:grid-cols-3 lg:gap-7.5">
         {topArticles.map(({ rank, title, excerpt, image }) => (
           <li key={rank} className="flex gap-6">
-            <div className="relative w-25 shrink-0">
-              <Image src={image} alt="" fill sizes="100px" className="object-cover" />
+            <div className="w-25 shrink-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={image.src}
+                width={image.width}
+                height={image.height}
+                alt=""
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover"
+              />
             </div>
 
             <div>

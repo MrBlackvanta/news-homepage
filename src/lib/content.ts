@@ -1,6 +1,6 @@
-import gamingGrowth from "@/assets/image-gaming-growth.jpg";
-import retroPcs from "@/assets/image-retro-pcs.jpg";
-import topLaptops from "@/assets/image-top-laptops.jpg";
+import gamingGrowth from "@/assets/image-gaming-growth.webp";
+import retroPcs from "@/assets/image-retro-pcs.webp";
+import topLaptops from "@/assets/image-top-laptops.webp";
 import type { StaticImageData } from "next/image";
 
 export type NavLink = { label: string; href: string };

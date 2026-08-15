@@ -17,7 +17,7 @@ export default function SiteHeader() {
 
     const toggle = toggleRef.current;
     closeRef.current?.focus();
-    document.body.style.overflow = "hidden";
+    document.body.classList.add("v-scroll-lock");
 
     const close = () => setMenuOpen(false);
     const trapTab = (event: KeyboardEvent) => {
@@ -46,7 +46,7 @@ export default function SiteHeader() {
     document.addEventListener("keydown", trapTab);
 
     return () => {
-      document.body.style.overflow = "";
+      document.body.classList.remove("v-scroll-lock");
       desktop.removeEventListener("change", close);
       document.removeEventListener("keydown", trapTab);
       toggle?.focus();
@@ -63,7 +63,7 @@ export default function SiteHeader() {
         <ul className="flex gap-10 text-dark-grayish-blue">
           {navLinks.map(({ label, href }) => (
             <li key={label}>
-              <a className="v-link-red" href={href}>
+              <a className="v-link-red block" href={href}>
                 {label}
               </a>
             </li>
@@ -77,7 +77,7 @@ export default function SiteHeader() {
         aria-expanded={menuOpen}
         aria-controls="mobile-menu"
         onClick={() => setMenuOpen(true)}
-        className="sm:hidden"
+        className="-my-2 py-2 sm:hidden"
       >
         <MenuIcon className="w-10" />
         <span className="sr-only">Open menu</span>
@@ -89,8 +89,8 @@ export default function SiteHeader() {
         onClick={(event) => {
           if (event.target === event.currentTarget) setMenuOpen(false);
         }}
-        className={`fixed inset-0 z-10 flex bg-very-dark-blue/50 transition-[opacity,display] transition-discrete duration-300 motion-reduce:transition-none sm:hidden starting:opacity-0 ${
-          menuOpen ? "opacity-100" : "hidden opacity-0"
+        className={`fixed inset-0 z-10 flex bg-very-dark-blue/50 transition-[opacity,visibility] duration-300 motion-reduce:transition-none sm:hidden ${
+          menuOpen ? "visible opacity-100" : "invisible opacity-0"
         }`}
       >
         <div
