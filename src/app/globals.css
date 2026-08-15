@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@source not "../../*.md";
 
 @theme {
   --color-off-white: #fffdfa;
