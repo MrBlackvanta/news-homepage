@@ -2,6 +2,7 @@ import Footer from "@/components/layout/footer";
 import SiteHeader from "@/components/layout/site-header";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import { siteUrl } from "@/app/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -13,9 +14,7 @@ const inter = Inter({
 
 const title = "W. — News homepage";
 const description =
-  "A news website homepage with a featured Web 3.0 story, a New sidebar and a ranked top-articles list — a Frontend Mentor challenge built with Next.js, TypeScript and Tailwind CSS.";
-const siteUrl = "https://news-homepage.abdelrhman-ahmed8881.workers.dev";
-
+  "A news website homepage with a featured Web 3.0 story, a New sidebar and a ranked top-articles list.";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,
